@@ -80,7 +80,7 @@ function DisplayTodos () {
         if (todo.done) {
             todoItem.classList.add('done');
         }
-        input.addEventListener('change', (e) =>{
+        input.addEventListener('click', (e) =>{
             todo.done = e.target.checked;
             localStorage.setItem('todos', JSON.stringify(todos));
 
@@ -92,8 +92,8 @@ function DisplayTodos () {
             DisplayTodos()
         })
 
-        edit.addEventListener('click', (e) => {
-            const input = querySelector('input');
+        edit.addEventListener('click', e => {
+            const input = content.querySelector('input');
             input.removeAttribute('readonly');
             input.focus();
             input.addEventListener('blur', (e) => {
